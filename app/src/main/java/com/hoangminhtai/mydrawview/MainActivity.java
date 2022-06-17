@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             params.setMargins(15,5,15,5);
             layout.setLayoutParams(params);
             layout.setWeightSum(3);
-            EditText txt1 = new EditText(MainActivity.this);
-            EditText txt2 = new EditText(MainActivity.this);
+            TextView txt1 = new TextView(MainActivity.this);
+            TextView txt2 = new TextView(MainActivity.this);
             if (checker % 2 == 0){
                 number = random.nextInt(9);
                 createTextView(txt1,1,number,layout);
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void runInBackground(int rowNumb) {
+        mainLayout.removeAllViews();
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
